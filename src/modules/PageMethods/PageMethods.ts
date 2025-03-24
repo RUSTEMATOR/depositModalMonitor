@@ -1,13 +1,16 @@
 import {Locator, Page} from "@playwright/test";
 
 export default class PageMethods {
-    private page: Page
+    public page: Page
     private mainPageLink: string
     private signInButton: Locator
     private emailInput: Locator
     private passwordInput: Locator
     private loginSubmitButton: Locator
+    private depModalButton: Locator
     private depModal: Locator
+    private paymentList: Locator
+
 
 
     constructor(page: Page) {
@@ -17,7 +20,9 @@ export default class PageMethods {
         this.emailInput = this.page.locator('#login_modal_email_input')
         this.passwordInput = this.page.locator('#login_password_input')
         this.loginSubmitButton = this.page.locator('#submit_login')
-        this.depModal = this.page.locator('#header_dep_btn')
+        this.depModalButton = this.page.locator('#header_dep_btn')
+        this.depModal = this.page.locator('.fast-deposit-modal')
+        this.paymentList = this.page.locator('.payment-methods__list')
     }
 
     async navigateToMainPage() {
@@ -33,11 +38,19 @@ export default class PageMethods {
     }
 
     async openDepModal() {
-        await this.depModal.click()
+        await this.depModalButton.click()
     }
 
     async screenshotDepModal(path: string) {
         await this.page.screenshot({path: path})
+    }
+
+    get getDepModal() {
+        return this.depModal
+    }
+
+    get getPaymentList() {
+        return this.paymentList
     }
 
 }
