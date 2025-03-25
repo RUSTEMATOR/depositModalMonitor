@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Modal Monitor - Infernal Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            background: black;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px crimson;
+            animation: flicker 1.5s infinite alternate;
+        }
+        .section {
+            border: 2px solid crimson;
+            padding: 20px;
+            margin: 20px;
+            background: rgba(255, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+        .section:hover {
+            transform: scale(1.05);
+            background: rgba(255, 0, 0, 0.4);
+        }
+        a {
+            color: orangered;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-shadow: 0 0 10px red;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+        code {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Deposit Modal Monitor</h1>
+    <p>Welcome to the Infernal Guide of Testing.</p>
+
+    <div class="section">
+        <h2>🔥 Download & Install</h2>
+        <p>Get the cursed test from <a href="https://github.com/RUSTEMATOR/depositModalMonitor">GitHub</a></p>
+        <p>Requires Node.js, TypeScript, and Playwright. Clone the repository and install dependencies with:</p>
+        <code>npm install</code>
+        <p>Then install Playwright Chromium:</p>
+        <code>npx playwright install chromium</code>
+    </div>
+
+    <div class="section">
+        <h2>⚠️ Prerequisites</h2>
+        <p>Ensure the following before running the test:</p>
+        <ul>
+            <li>Express VPN installed and activated.</li>
+            <li>Run the test with elevated privileges (as Administrator).</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>💀 How to Use</h2>
+        <p>To run the test, execute:</p>
+        <code>npx playwright test</code>
+        <p>To see the test in action:</p>
+        <code>npx playwright test --headed</code>
+    </div>
+
+    <div class="section">
+        <h2>🔮 Updating Snapshots</h2>
+        <p>To update expected results, use:</p>
+        <code>npx playwright test --update-snapshots</code>
+    </div>
+
+    <div class="section">
+        <h2>👹 Test Scenarios</h2>
+        <p>The test checks deposit modal windows across multiple locales:</p>
+        <ul>
+            <li>AU - Australia</li>
+            <li>NZ - New Zealand</li>
+            <li>CA - Canada</li>
+            <li>DE - Germany</li>
+            <li>NO - Norway</li>
+        </ul>
+        <p>And for the following user groups:</p>
+        <ul>
+            <li>Untrusted</li>
+            <li>Untrusted by Affiliates</li>
+            <li>Trusted</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🔗 Useful Links</h2>
+        <ul>
+            <li><a href="https://playwright.dev/">Playwright Official Documentation</a></li>
+            <li><a href="https://nodejs.org/">Node.js Official Site</a></li>
+            <li><a href="https://expressvpn.com/">ExpressVPN</a></li>
+        </ul>
+    </div>
+</body>
+</html>
