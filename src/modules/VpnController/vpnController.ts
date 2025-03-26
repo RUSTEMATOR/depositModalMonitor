@@ -1,13 +1,7 @@
 import { exec } from "child_process";
-import * as path from "path";
 
 export class VpnController {
-    private vpnCliPath: string;
-
-    constructor() {
-        // Typical ExpressVPN installation path on macOS
-        this.vpnCliPath = path.join('/Applications', 'ExpressVPN.app', 'Contents', 'MacOS', 'expressvpn');
-    }
+    constructor() {}
 
     runVPN(command: string): Promise<string> {
         return new Promise((resolve, reject) => {
@@ -30,16 +24,16 @@ export class VpnController {
         });
     }
 
-    async vpnConnect(location: string): Promise<string> {
-        return await this.runVPN(`${this.vpnCliPath} connect "${location}"`);
+    async vpnConnnect(location: string): Promise<string> {
+        return await this.runVPN(`expresso connect "${location}"`);
     }
 
     async vpnDisconnect(): Promise<string> {
-        return await this.runVPN(`${this.vpnCliPath} disconnect`);
+        return await this.runVPN('expresso disconnect');
     }
 
     async vpnCheckStatus(): Promise<string> {
-        const status = await this.runVPN(`${this.vpnCliPath} status`);
+        const status = await this.runVPN('expresso status');
         return status.trim();
     }
 
