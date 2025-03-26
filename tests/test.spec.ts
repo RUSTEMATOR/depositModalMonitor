@@ -23,9 +23,9 @@ for(const locale of Object.keys(USERS)) {
                     pageMethods = new PageMethods(page)
 
                     const currentStatus = await vpnController.vpnCheckStatus();
-                    if (currentStatus === `Connected to ${location}`) {
+                    if (currentStatus === `VPN connected to ${location}`) {
                         console.log('Correct location, proceeding to the test');
-                    } else if (currentStatus === `Not connected`) {
+                    } else if (currentStatus === `VPN not connected`) {
                         console.log('Connecting...');
                         await vpnController.vpnConnnect(location);
                     } else {
@@ -53,7 +53,7 @@ for(const locale of Object.keys(USERS)) {
                     await pageMethods.signIn(email, password)
                     await pageMethods.openDepModal()
                     await pageMethods.getPaymentList.waitFor({state: 'visible'})
-                    await pageMethods.page.waitForTimeout(5000)
+                    await pageMethods.page.waitForTimeout(15000)
 
 
                     await expect(pageMethods.getPaymentList).toHaveScreenshot()
