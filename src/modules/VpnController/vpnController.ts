@@ -1,11 +1,17 @@
 import { exec } from "child_process";
+import * as path from "path";
 
 export class VpnController {
-    constructor() {}
+    private vpnCliPath: string;
+
+    constructor() {
+        // Typical ExpressVPN installation path on macOS
+        this.vpnCliPath = path.join('/Applications', 'ExpressVPN.app', 'Contents', 'MacOS', 'expressvpn');
+    }
 
     runVPN(command: string): Promise<string> {
         return new Promise((resolve, reject) => {
-            exec(command, { cwd: 'C:/Program Files (x86)/ExpressVPN/services/' }, (error, stdout, stderr) => {
+            exec(command, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Error executing command: ${error.message}`);
                     reject(error.message);
@@ -24,16 +30,16 @@ export class VpnController {
         });
     }
 
-    async vpnConnnect(location: string): Promise<string> {
-        return await this.runVPN(`ExpressVPN.CLI connect "${location}"`);
+    async vpnConnect(location: string): Promise<string> {
+        return await this.runVPN(`${this.vpnCliPath} connect "${location}"`);
     }
 
     async vpnDisconnect(): Promise<string> {
-        return await this.runVPN('ExpressVPN.CLI disconnect');
+        return await this.runVPN(`${this.vpnCliPath} disconnect`);
     }
 
     async vpnCheckStatus(): Promise<string> {
-        const status = await this.runVPN('ExpressVPN.CLI status');
+        const status = await this.runVPN(`${this.vpnCliPath} status`);
         return status.trim();
     }
 
