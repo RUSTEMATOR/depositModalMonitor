@@ -53,7 +53,7 @@ for(const locale of Object.keys(USERS)) {
                     await pageMethods.signIn(email, password)
                     await pageMethods.openDepModal()
                     await pageMethods.getPaymentList.waitFor({state: 'visible'})
-                    await pageMethods.page.waitForTimeout(5000)
+                    await pageMethods.page.waitForTimeout(15000)
 
 
                     await expect(pageMethods.getPaymentList).toHaveScreenshot()

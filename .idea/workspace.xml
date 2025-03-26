@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a42a7c0a-161a-48e7-94c8-b108f2087bc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Tutorial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playwright.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/playwright.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test.spec.ts-snapshots/Check-au-untrusted-Visual-comparison-of-dep-modal-au-untrusted-1-chromium-win32.png" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.spec.ts-snapshots/Check-au-untrusted-Visual-comparison-of-dep-modal-au-untrusted-1-chromium-win32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test.spec.ts-snapshots/Check-de-untrusted-Visual-comparison-of-dep-modal-de-untrusted-1-chromium-win32.png" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.spec.ts-snapshots/Check-de-untrusted-Visual-comparison-of-dep-modal-de-untrusted-1-chromium-win32.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +52,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main-done",
+    "git-widget-placeholder": "start",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/User/Desktop/Automation/depositModalMonitor",
     "node.js.detected.package.eslint": "true",
