@@ -14,8 +14,10 @@ echo ---------------------
 echo 1. Install Dependencies
 echo 2. Install Chromium
 echo 3. Run Tests
-echo 4. Exit
+echo 4. Update Snapshots
+echo 5. Exit
 echo.
+
 
 :: Prompt user for input
 set /p choice="Enter your choice (1-4): "
@@ -46,6 +48,13 @@ if "%choice%"=="1" (
     pause
     goto menu
 ) else if "%choice%"=="4" (
+    echo Updating snapshots...
+    call npx playwright test --update-snapshots
+    echo.
+    echo Snapshots update complete.
+    pause
+    goto menu
+) else if "%choice%"=="5" (
     exit /b
 ) else (
     echo Invalid choice, please try again.
