@@ -14,7 +14,8 @@ show_menu() {
     echo "1. Install Dependencies"
     echo "2. Install Chromium"
     echo "3. Run Tests"
-    echo "4. Exit"
+    echo "4. Update Snapshots"
+    echo "5. Exit"
     echo
 }
 
@@ -51,6 +52,13 @@ while true; do
             read -p "Press Enter to continue..."
             ;;
         4)
+            echo "Updating snapshots..."
+            npx playwright test --update-snapshots
+            echo
+            echo "Snapshots update complete."
+            read -p "Press Enter to continue..."
+            ;;
+        5)
             echo "Exiting..."
             exit 0
             ;;
