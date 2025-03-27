@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Modal Monitor - Infernal Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            background: black;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px crimson;
+            animation: flicker 1.5s infinite alternate;
+        }
+        .section {
+            border: 2px solid crimson;
+            padding: 20px;
+            margin: 20px auto;
+            background: rgba(255, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+        .section:hover {
+            transform: scale(1.05);
+            background: rgba(255, 0, 0, 0.4);
+        }
+        a {
+            color: orangered;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-shadow: 0 0 10px red;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+        pre {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+            overflow-x: auto;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: crimson;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .copy-btn:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+    <h1>Deposit Modal Monitor</h1>
+    <p>Welcome to the Infernal Guide of Testing.</p>
+
+    <div class="section">
+        <h2>🔥 Download & Install</h2>
+        <p>Get the cursed test from <a href="https://github.com/RUSTEMATOR/depositModalMonitor">GitHub</a></p>
+        <p>Requires Node.js, TypeScript, and Playwright.</p>
+
+        <details>
+            <summary>💻 Windows Instructions</summary>
+            <p>First: open terminal and navigate to Desktop</p>
+            <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>cd ./Desktop</pre>
+            <p>Clothe the repository</p>
+            <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>git clone https://github.com/RUSTEMATOR/depositModalMonitor.git</pre>
+            <p>Enter the repository</p>
+            <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>cd ./depositModalMonitor</pre>
+            <p>Install dependencies</p>
+            <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>npm install</pre>
+            <p>Install TypeScript if not installed</p>
+            <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>npm install typescript --save-dev</pre>
+            <p>Then install Playwright Chromium:</p>
+            <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>npx playwright install chromium</pre>
+        </details>
+
+        <details>
+            <summary>🍏 macOS Instructions</summary>
+            <p>First: open terminal and navigate to Desktop</p>
+            <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>cd ./Desktop</pre>
+            <p>Clothe the repository</p>
+            <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>git clone https://github.com/RUSTEMATOR/depositModalMonitor.git</pre>
+            <p>Enter the repository</p>
+            <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>cd ./depositModalMonitor</pre>
+            <p>Install Expresso library for Express VPN automation</p>
+            <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>brew install --cask sttz/tap/expresso</pre>
+            <p>Install dependencies</p>
+            <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>npm install</pre>
+            <p>Install TypeScript if not installed</p>
+            <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>npm install typescript --save-dev</pre>
+            <p>Then install Playwright Chromium:</p>
+            <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>npx playwright install chromium</pre>
+        </details>
+    </div>
+
+    <div class="section">
+        <h2>⚠️ Prerequisites</h2>
+        <p>Ensure the following before running the test:</p>
+        <ul>
+            <li>Express VPN installed and activated.</li>
+            <li>Run the test with elevated privileges (as Administrator).</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>💀 How to Use</h2>
+        <p>To run the test, execute:</p>
+        <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>npx playwright test</pre>
+        <p>To see the test in action:</p>
+        <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>npx playwright test --headed</pre>
+    </div>
+
+    <div class="section">
+        <h2>🔮 Updating Snapshots</h2>
+        <p>To update expected results, use:</p>
+        <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>npx playwright test --update-snapshots</pre>
+    </div>
+
+    <div class="section">
+        <h2>📂 Open Report For the Last Run</h2>
+        <p>To update expected results, use:</p>
+        <pre><button class="copy-btn" onclick="copyText(this)">Copy</button>npx playwright show-report</pre>
+    </div>
+
+    <div class="section">
+        <h2>👹 Test Scenarios</h2>
+        <p>The test checks deposit modal windows across multiple locales:</p>
+        <ul>
+            <li>AU - Australia</li>
+            <li>NZ - New Zealand</li>
+            <li>CA - Canada</li>
+            <li>DE - Germany</li>
+            <li>NO - Norway</li>
+        </ul>
+        <p>And for the following user groups:</p>
+        <ul>
+            <li>Untrusted</li>
+            <li>Untrusted by Affiliates</li>
+            <li>Trusted</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📷 Media & Screenshots</h2>
+        <p>Recommended comparison options:</p>
+        <img src="./media/Report_Comparison.png" alt="Deposit Modal Example" width="500">
+    </div>
+
+
+    <div class="section">
+        <h2>🎥 Usage video tutorial</h2>
+        <details>
+            <summary>💻 Windows</summary>
+            <img src="./media/Windows.gif" alt="Windows guide" width="500">
+        </details>
+        <details>
+            <summary>🍏 macOS</summary>
+            <img src="./media/macOS.gif" alt="macOS guide" width="500">
+        </details>
+    </div>
+
+    <div class="section">
+        <h2>🔗 Useful Links</h2>
+        <ul>
+            <li><a href="https://playwright.dev/">Playwright Official Documentation</a></li>
+            <li><a href="https://nodejs.org/">Node.js Official Site</a></li>
+            <li><a href="https://expressvpn.com/">ExpressVPN</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function copyText(button) {
+            const codeBlock = button.nextSibling;
+            navigator.clipboard.writeText(codeBlock.textContent.trim()).then(() => {
+                button.textContent = "Copied!";
+                setTimeout(() => button.textContent = "Copy", 2000);
+            });
+        }
+    </script>
+</body>
+</html>
