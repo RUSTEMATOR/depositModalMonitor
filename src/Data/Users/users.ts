@@ -42,7 +42,7 @@ export const USERS = {
         location: 'Canada - Toronto',
         user: {
             untrusted: {
-                email: 'Canada_btag@Kingbilly.Xyz',
+                email: 'newcanada@kingbilly.xyz	',
                 password: 'KingBilly123!',
             },
             untrustedFromAffialiates: {

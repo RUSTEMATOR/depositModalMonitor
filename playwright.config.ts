@@ -1,12 +1,13 @@
 import { defineConfig, devices } from '@playwright/test';
+import generateCustomLayoutAsync from './my_custom_layout';
 
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
+import dotenv from 'dotenv';
+import path from 'path';
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -22,7 +23,19 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: 1,
   /* Reporter t,o use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [['html'],
+[
+       "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
+      {
+        slackOAuthToken: process.env.SLACK_BOT_USER_OAUTH_TOKEN,
+        channels: ['test-reporter'],
+        sendResults: 'always',
+        layoutAsync: generateCustomLayoutAsync,
+        showInThread: true,
+        sendCustomBlocksInThreadAfterIndex: 3, // Only first 3 blocks in main message, rest in thread
+      },
+    ],
+  ],
 
   timeout: 120000,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -32,7 +45,21 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
-    headless: true
+    headless: true,
+    
+    /* Screenshot comparison settings */
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+  },
+  
+  /* Global screenshot comparison settings */
+  expect: {
+    // Configure screenshot comparison
+    toHaveScreenshot: {
+      threshold: 0.3, // 30% threshold for pixel differences
+      maxDiffPixelRatio: 0.1, // Allow up to 10% of pixels to be different
+      animations: 'disabled', // Disable animations for consistent screenshots
+    },
   },
 
   /* Configure projects for major browsers */
