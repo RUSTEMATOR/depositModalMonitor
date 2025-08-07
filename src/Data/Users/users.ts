@@ -1,4 +1,21 @@
-export const USERS = {
+type UserCredentials = {
+    email: string;
+    password: string;
+};
+
+type UserTypes = {
+    [type: string]: UserCredentials;
+};
+
+type Users = {
+    [locale: string]: {
+        location: string;
+        user: UserTypes;
+    };
+}
+
+
+export const USERS: Users = {
     au: {
         location: 'Australia - Melbourne',
         user: {
@@ -42,7 +59,7 @@ export const USERS = {
         location: 'Canada - Toronto',
         user: {
             untrusted: {
-                email: 'Canada_btag@Kingbilly.Xyz',
+                email: 'newcanada@kingbilly.xyz	',
                 password: 'KingBilly123!',
             },
             untrustedFromAffialiates: {
@@ -50,7 +67,7 @@ export const USERS = {
                 password: 'KingBilly123!',
             },
             trusted: {
-                email: 'canada_trusted2@kingbilly.xyz\t',
+                email: 'canada_trusted2@kingbilly.xyz',
                 password: 'KingBilly123!',
             },
         }
@@ -64,11 +81,11 @@ export const USERS = {
                 password: 'KingBilly123!',
             },
             untrustedFromAffialiates: {
-                email: 'Germany_trusted@kingbilly.xyz',
+                email: 'Germany_btag@Kingbilly.Xyz',
                 password: 'KingBilly123!',
             },
             trusted: {
-                email: 'Germany_btag@Kingbilly.Xyz',
+                email: 'Germany_trusted@kingbilly.xyz',
                 password: 'KingBilly123!',
             },
         }

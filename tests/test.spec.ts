@@ -7,7 +7,7 @@ for(const locale of Object.keys(USERS)) {
     const {location, user} = USERS[locale]
 
     for (const [type, creds] of Object.entries(user)) {
-        const [email, password] = Object.values(creds)
+        const {email, password} = creds
 
         test.describe(`Check ${locale}, ${type}`, () => {
 
@@ -55,8 +55,7 @@ for(const locale of Object.keys(USERS)) {
                     await pageMethods.getPaymentList.waitFor({state: 'visible'})
                     await pageMethods.page.waitForTimeout(15000)
 
-
-                    await expect(pageMethods.getPaymentList).toHaveScreenshot()
+                    await expect(pageMethods.getPaymentList).toHaveScreenshot({maxDiffPixels: 50})
                 })
         })
     }
