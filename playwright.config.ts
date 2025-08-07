@@ -28,7 +28,7 @@ export default defineConfig({
        "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
       {
         slackOAuthToken: process.env.SLACK_BOT_USER_OAUTH_TOKEN,
-        channels: ['test-reporter'],
+        channels: ['test-reporter', 'kb-payment'],
         sendResults: 'always',
         layoutAsync: generateCustomLayoutAsync,
         showInThread: true,
