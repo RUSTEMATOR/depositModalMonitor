@@ -1,4 +1,4 @@
-import {expect, Page, test} from "@playwright/test";
+import {expect, test} from "@playwright/test";
 import VpnController from "../src/modules/VpnController/vpnController";
 import {USERS} from "../src/Data/Users/users";
 import PageMethods from "../src/modules/PageMethods/PageMethods";
