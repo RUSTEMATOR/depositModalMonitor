@@ -74,7 +74,7 @@ export const USERS: Users = {
     },
 
     de: {
-        location: 'Germany - Frankfurt - 1',
+        location: 'Germany - Frankfurt - 3',
         user: {
             untrusted: {
                 email: 'newgermany@kingbilly.xyz',
